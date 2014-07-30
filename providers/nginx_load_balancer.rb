@@ -43,7 +43,7 @@ action :before_deploy do
     group "root"
     mode "644"
     variables(:resource => new_resource,
-              :hosts => []),
+              :hosts => [],
               :application_socket => Array(new_resource.application_socket)
              )
     notifies :reload, resources(:service => 'nginx')
